@@ -49,13 +49,33 @@ public class Deck {
             deck.add(rd, c_switch);
 
         }
-        for (int j = 0; j < 52; j++) {
-            System.out.println(deck.get(j).toString(deck.get(j)));
-        }
 
     }
 
-    public void deal(int players){
+    public ArrayList deal(int playerNum) {
+
+        ArrayList<Card> p_deck = new ArrayList<>();
+
+        int remainder = 0;
+        int i = 0;
+        if (52 % playerNum > 0) {
+            remainder = 52 % playerNum;
+        }
+        
+        int per = 52 / playerNum; // hand
+
+
+        for (int j = 0; j < per; j++) {
+            Card add = deck.remove(j);
+            p_deck.add(add);
+
+        }
+
+        for (int k = 0; k < p_deck.size(); k++) {
+            System.out.println(p_deck.get(k).toString(p_deck.get(k)));
+        }
+
+        return p_deck;
 
 
     }
