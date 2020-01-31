@@ -33,7 +33,22 @@ public class Deck {
 
     public void shuffle() {
 
-        Math.random();
+        int max = deck.size();
+        int min = 1;
+
+        for (int i = 0; i < deck.size(); i++) {
+
+            int rd = (int)(( Math.random() * (max - min + 1)))  ;
+            System.out.println(rd); // random number
+
+            Card c_switch = deck.get(i);
+            Card c_swap = deck.get(rd);
+
+        }
+
+        for (int j = 0; j < 52; j++) {
+            System.out.println(deck.get(j));
+        }
 
 
     }
@@ -41,9 +56,10 @@ public class Deck {
     public void deal(int players){
 
 
+
     }
 
-    public void play() {
+    public void plsy() {
 
 
     }
@@ -53,6 +69,5 @@ public class Deck {
 
         return "";
     }
-
 
 }
