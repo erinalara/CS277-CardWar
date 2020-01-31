@@ -38,12 +38,12 @@ public class Deck {
 
     }
 
-    public void deal(){
+    public void deal(int players){
 
 
     }
 
-    public void plsy() {
+    public void play() {
 
 
     }
