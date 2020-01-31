@@ -1,6 +1,5 @@
 public class WarGame {
 
-  private int players;
   
   
   
