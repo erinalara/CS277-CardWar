@@ -1,3 +1,6 @@
+
+
+
 public class Card {
 
     private String rank;
@@ -40,8 +43,12 @@ public class Card {
         return value;
     }
 
+    public boolean equalsTo(Card c) {
+        return this.value == c.value;
+    }
+
     //@Override
     public String toString (Card c) {
-        return "Card is " + c.rank + "of " + c.suit;
+        return "Card is " + c.rank + " of " + c.suit;
     }
 }
