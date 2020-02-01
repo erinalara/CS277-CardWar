@@ -22,7 +22,7 @@ public class Main {
         System.out.println("remainder: " + remainder);
 
 
-        Game war = new Game();
+        WarGame war = new WarGame();
         war.play(playerNum);
 
 
