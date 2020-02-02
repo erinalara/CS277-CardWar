@@ -52,7 +52,7 @@ public class Deck {
 
     }
 
-    public ArrayList deal(int playerNum) {
+    public ArrayList<Card> deal(int playerNum) {
 
         ArrayList<Card> p_deck = new ArrayList<>();
 
@@ -61,7 +61,7 @@ public class Deck {
         if (52 % playerNum > 0) {
             remainder = 52 % playerNum;
         }
-        
+
         int per = 52 / playerNum; // hand
 
 
@@ -70,13 +70,7 @@ public class Deck {
             p_deck.add(add);
 
         }
-
-        for (int k = 0; k < p_deck.size(); k++) {
-            System.out.println(p_deck.get(k).toString(p_deck.get(k)));
-        }
-
         return p_deck;
-
 
     }
 
