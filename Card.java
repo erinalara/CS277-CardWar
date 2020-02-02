@@ -47,6 +47,11 @@ public class Card {
         return this.value == c.value;
     }
 
+    public int compareTo(Card c){
+
+        return this.value - c.value;
+    }
+
     //@Override
     public String toString (Card c) {
         return "Card is " + c.rank + " of " + c.suit;

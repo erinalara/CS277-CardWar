@@ -10,7 +10,10 @@ public class WarGame {
         d.addCards();
         d.shuffle();
 
+        Card highest = new Card("", 0);
+
         ArrayList <ArrayList> players_decks = new ArrayList<>();
+        ArrayList <Card> cardsInPlay = new ArrayList<>();
         for (int i = 0; i < playerNum; i++) {
             ArrayList player = d.deal(playerNum);
             players_decks.add(player);
@@ -22,7 +25,25 @@ public class WarGame {
         for (int j = 0; j < playerNum; j++) {
             ArrayList <Card> player = players_decks.get(j);
             Card p_card = player.remove(0);
+            cardsInPlay.add(p_card);
             System.out.println("Player " + (j+1) + "'s " + p_card.toString());
+        }
+
+        for (int i = 0; i < cardsInPlay.size(); i++){
+
+            // assume first card played is current highest
+            highest = cardsInPlay.get(i);
+
+            if (cardsInPlay.get(i++).compareTo(highest) > 1){
+
+                // if next card is higher than current, mark the next card as the highest
+                highest = cardsInPlay.get(i++);
+            }
+
+            else if (cardsInPlay.get(i++).compareTo(highest) == 1){
+
+                // initiate war
+            }
         }
 
         
