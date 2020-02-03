@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class warGame {
+public class Game {
 
     private int wins;
 
@@ -11,6 +11,7 @@ public class warGame {
         d.shuffle();
 
         Card highest = new Card();
+        int losers = 0;
 
         ArrayList <ArrayList> players_decks = new ArrayList<>();
         ArrayList <Card> cardsInPlay = new ArrayList<>();
@@ -20,18 +21,20 @@ public class warGame {
             players_decks.add(player);
         }
 
-        while (//one player left or one persons deck != 0) {
+        while (losers != playerNum - 1) {
 
             for (int j = 0; j < playerNum; j++) {
 
                 ArrayList<Card> player = players_decks.get(j);
                 if (player.size() == 0) {
-                    j++;
+                    Card p_card = new Card();
+                    cardsInPlay.add(p_card);
                 }
-
-                Card p_card = player.remove(0);
-                cardsInPlay.add(p_card);
-                System.out.println("Player " + (j + 1) + "'s " + p_card.toString());
+                else {
+                    Card p_card = player.remove(0);
+                    cardsInPlay.add(p_card);
+                    System.out.println("Player " + (j + 1) + "'s " + p_card.toString());
+                }
             }
 
             for (int i = 0; i < cardsInPlay.size(); i++) {
@@ -64,6 +67,7 @@ public class warGame {
             for (int l = 0; l < playerNum; l++) {
                 ArrayList loser = players_decks.get(playerNum);
                 if (loser.size() == 0) {
+                    losers ++;
                     System.out.println("Player " + playerNum+ "has ran out of cards and lost.");
                 }
             }
