@@ -29,7 +29,14 @@ public class WarGame {
             System.out.println("Player " + (j+1) + "'s " + p_card.toString());
         }
 
-        for (int i = 0; i < cardsInPlay.size(); i++){
+
+        // working with 2+ players seems too difficult LOL
+        for (int i = 0; i < cardsInPlay.size() - 1; i++){
+            for( int j = 1; j < cardsInPlay.size() - 1; j++){
+
+                if ()
+
+            }
 
             // assume first card played is current highest
             highest = cardsInPlay.get(i);
@@ -40,7 +47,7 @@ public class WarGame {
                 highest = cardsInPlay.get(i++);
             }
 
-            else if (cardsInPlay.get(i++).compareTo(highest) == 1){
+            else if (cardsInPlay.get(i++).compareTo(highest) == 0){
 
                 // initiate war
             }
