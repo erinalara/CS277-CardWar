@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Game {
+public class WarGame {
 
     private int wins;
 
@@ -115,7 +115,7 @@ public class Game {
 
                 }
             }
-            if ((war.get(i).equalsTo(high)){
+            if ((war.get(i).equalsTo(high))){
                     // initiate war
             }
         }
@@ -129,11 +129,9 @@ public class Game {
         if (counter > 2) {
             war_start(playerNum, players_decks);
         }
-        }
-
-
-
     }
+    
+    
 
     public void gameOver(){
 
