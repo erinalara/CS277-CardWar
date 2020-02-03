@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Game {
+public class warGame {
 
     private int wins;
 
@@ -36,7 +36,7 @@ public class Game {
                     System.out.println("Player " + (j + 1) + "'s " + p_card.toString());
                 }
             }
-
+            int counter = 0;
             for (int i = 0; i < cardsInPlay.size(); i++) {
 
                 // assume first card played is current highest
@@ -44,17 +44,20 @@ public class Game {
 
                 if (i != 0) {
                     if (cardsInPlay.get(i).compareTo(highest) > 1) {
-
                         // if next card is higher than current, mark the next card as the highest
                         highest = cardsInPlay.get(i);
-
-                    } else if ((cardsInPlay.get(i).compareTo(highest) == 0) & (cardsInPlay.get(i).compareTo(highest) > 1)) {
-                        // initiate war
-                        war_start(playerNum, players_decks);
-
                     }
                 }
+                if ((cardsInPlay.get(i).equalsTo(highest) == true){
+                    // initiate war
+                    counter ++;
+                }
             }
+
+            if (counter > 2) {
+                war_start(playerNum, players_decks);
+            }
+
             int winner = 0;
             for (int p = 0; p < cardsInPlay.size(); p++) {
                 if (cardsInPlay.get(p).equalsTo(highest) == true) {
@@ -73,17 +76,6 @@ public class Game {
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
